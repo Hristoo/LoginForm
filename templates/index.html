@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Login</title>
-</head>
-<body>
-<main>
-    <h1>Welcome to Website </h1>
-    <p>Keeping Communities Connected</p>
-    <form action="login.php" method="get">
+  </head>
+  <body>
+    <div class="header">
+      <a href="#" class="logo">Website</a>
+      <div class="header-right">
+        <a href="#" class="help">need Help?</a>
+      </div>
+    </div>
+    <main class="index-main">
+      <h1>Welcome to Website</h1>
+      <p>Keeping Communities Connected</p>
+      <form action="login.php" method="get">
         <section>
-            <p>I’m new user</p>
-            <button type="submit">Create Account</button>
+          <img src="img/user.png" />
         </section>
-    </form>
-     <form action="login.php" method="get">
-      
         <section>
-            <p>I have an account</p>
-            <button type="submit">Login Now</button>
+          <p>I’m new user</p>
+          <button type="submit">Create Account</button>
         </section>
-    </form>
-</main>
-</body>
+      </form>
+      <form action="login.php" method="get">
+        <section>
+          <img src="img/user1.png" />
+        </section>
+        <section>
+          <p>I have an account</p>
+          <button type="submit">Login Now</button>
+        </section>
+      </form>
+    </main>
+  </body>
 </html>
