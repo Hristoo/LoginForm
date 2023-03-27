@@ -8,10 +8,7 @@ $code = $_SESSION["code"];
 $verified = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-
     $verified = verify($phone, $email, $code);
-
     $verified ? $err = "" : $err = "Please enter your verification code";
 }
 
@@ -35,13 +32,12 @@ function verify($phone, $email, $code)
 }
 
 if (!$verified) {
-    var_dump($_SESSION["code"]);
+    echo "Code: " + $_SESSION["code"];
 }
 
 if ($verified) {
     ?>
     <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,21 +62,18 @@ if ($verified) {
             </form>
         </main>
     </body>
-
     </html>
     <?php
 } else {
     if ($_GET["verify"] == "mail") {
         ?>
         <html lang="en">
-
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="css/style.css">
             <title>Verify your email address</title>
         </head>
-
         <body>
             <?php readfile('templates/header.html'); ?>
             <main>
@@ -102,7 +95,6 @@ if ($verified) {
                         <input <?php echo $err != null ? 'class="error"' : 'class=""'; ?> type="number" id="code" name="code"
                             placeholder="Enter 6-digit verification code here" required>
                         <span class="<?php echo $err != '' ? 'error' : ''; ?>"> <?php echo $err; ?></span>
-
                     </div>
                     <section>
                         <button type="submit">Continue</button>
@@ -113,21 +105,19 @@ if ($verified) {
                 </form>
             </main>
         </body>
-
         </html>
         <?php
     }
+
     if ($_GET["verify"] == "phone") {
         ?>
         <html lang="en">
-
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="css/style.css">
             <title>Verify your mobile number</title>
         </head>
-
         <body>
             <?php readfile('templates/header.html'); ?>
             <main>
@@ -149,7 +139,6 @@ if ($verified) {
                         <input <?php echo $err != null ? 'class="error"' : 'class=""'; ?> type="number" id="code" name="code"
                             placeholder="Enter 6-digit verification code here" required>
                         <span class="<?php echo $err != '' ? 'error' : ''; ?>"> <?php echo $err; ?></span>
-
                     </div>
                     <section>
                         <button type="submit">Continue</button>
@@ -160,7 +149,6 @@ if ($verified) {
                 </form>
             </main>
         </body>
-
         </html>
         <?php
     }
